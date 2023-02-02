@@ -1,0 +1,21 @@
+<storage_configuration>
+ <disks>
+     <slow>
+         <path>/mnt/slow/clickhouse</path>
+     </slow>
+ </disks>
+ <policies>
+     <hot_and_cold>
+         <volumes>
+             <hot>
+                 <disk>default</disk>
+                 <max_data_part_size_bytes>1073741824</max_data_part_size_bytes>
+             </hot>
+             <cold>
+                 <disk>slow</disk>
+             </cold>
+         </volumes>
+         <move_factor>0.2</move_factor>
+     </hot_and_cold>
+ </policies>
+</storage_configuration>
